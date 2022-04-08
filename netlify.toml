@@ -1,3 +1,153 @@
+[functions]
+
+  [functions.__api]
+  included_files = [
+    "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/functions/**"
+  ]
+  external_node_modules = [
+    "msgpackr-extract"
+  ]
+
+  [functions.__dsg]
+  included_files = [
+    "public/404.html",
+    "public/500.html",
+    "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/data/**",
+    "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/query-engine/**",
+    "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/page-ssr/**",
+    "!**/*.js.map"
+  ]
+  external_node_modules = [
+    "msgpackr-extract"
+  ]
+  node_bundler = "esbuild"
+
+  [functions.__ssr]
+  included_files = [
+    "public/404.html",
+    "public/500.html",
+    "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/data/**",
+    "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/query-engine/**",
+    "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/page-ssr/**",
+    "!**/*.js.map"
+  ]
+  external_node_modules = [
+    "msgpackr-extract"
+  ]
+  node_bundler = "esbuild"
+
 [build]
-  command = "npm run build"
-  publish = "public/"
+command = "npm run build"
+publish = "public/"
+
+[[redirects]]
+from = "/api/*"
+to = "/.netlify/functions/__api"
+status = 200
+
+[[redirects]]
+from = "/*"
+to = "/.netlify/builders/__dsg"
+status = 200
+
+[context]
+
+  [context.production]
+
+    [context.production.functions]
+
+      [context.production.functions.__api]
+      included_files = [
+        "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/functions/**"
+      ]
+      external_node_modules = [
+        "msgpackr-extract"
+      ]
+
+      [context.production.functions.__dsg]
+      included_files = [
+        "public/404.html",
+        "public/500.html",
+        "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/data/**",
+        "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/query-engine/**",
+        "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/page-ssr/**",
+        "!**/*.js.map"
+      ]
+      external_node_modules = [
+        "msgpackr-extract"
+      ]
+      node_bundler = "esbuild"
+
+      [context.production.functions.__ssr]
+      included_files = [
+        "public/404.html",
+        "public/500.html",
+        "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/data/**",
+        "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/query-engine/**",
+        "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/page-ssr/**",
+        "!**/*.js.map"
+      ]
+      external_node_modules = [
+        "msgpackr-extract"
+      ]
+      node_bundler = "esbuild"
+
+    [[context.production.redirects]]
+    from = "/api/*"
+    to = "/.netlify/functions/__api"
+    status = 200
+
+    [[context.production.redirects]]
+    from = "/*"
+    to = "/.netlify/builders/__dsg"
+    status = 200
+
+  [context.master]
+
+    [context.master.functions]
+
+      [context.master.functions.__api]
+      included_files = [
+        "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/functions/**"
+      ]
+      external_node_modules = [
+        "msgpackr-extract"
+      ]
+
+      [context.master.functions.__dsg]
+      included_files = [
+        "public/404.html",
+        "public/500.html",
+        "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/data/**",
+        "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/query-engine/**",
+        "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/page-ssr/**",
+        "!**/*.js.map"
+      ]
+      external_node_modules = [
+        "msgpackr-extract"
+      ]
+      node_bundler = "esbuild"
+
+      [context.master.functions.__ssr]
+      included_files = [
+        "public/404.html",
+        "public/500.html",
+        "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/data/**",
+        "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/query-engine/**",
+        "/Users/orinokai/Sites/test-gatsby-font-preload/.cache/page-ssr/**",
+        "!**/*.js.map"
+      ]
+      external_node_modules = [
+        "msgpackr-extract"
+      ]
+      node_bundler = "esbuild"
+
+    [[context.master.redirects]]
+    from = "/api/*"
+    to = "/.netlify/functions/__api"
+    status = 200
+
+    [[context.master.redirects]]
+    from = "/*"
+    to = "/.netlify/builders/__dsg"
+    status = 200

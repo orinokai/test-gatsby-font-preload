@@ -17,8 +17,10 @@
   },
   "dependencies": {
     "gatsby": "^4.11.2",
-    "gatsby-plugin-preload-fonts": "^3.11.1",
+    "gatsby-plugin-netlify": "^4.2.0",
+    "linux": "^4.2.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "x64": "^1.0.0"
   }
 }

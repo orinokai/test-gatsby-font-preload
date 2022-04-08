@@ -3,5 +3,5 @@ module.exports = {
     title: `test-gatsby-font-preload`,
     siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: [`gatsby-plugin-preload-fonts`],
+  plugins: [`gatsby-plugin-netlify`],
 };
