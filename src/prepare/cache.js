@@ -12,9 +12,16 @@ function createEmptyCache() {
   };
 }
 
+console.log("set cache dir");
 const cacheDir = process.cwd();
 const cacheFile = path.join(cacheDir, `font-preload-cache.json`);
 let cache;
+
+fs.readdir(cacheDir, (err, files) => {
+  files.forEach((file) => {
+    console.log(file);
+  });
+});
 
 function load() {
   console.log("loading cache");
